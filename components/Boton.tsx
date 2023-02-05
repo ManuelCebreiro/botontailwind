@@ -3,11 +3,7 @@ import React,{useState} from "react";
 type ButtonProps ={
     children: React.ReactNode;
     icon?: React.ReactNode;
-    backgroundColor?: string;
-    hoverBackgroundColor?: string;
-    fontSize?: string;
     className?: string;
-    color?: string;
     [x: string]: any
 
 }
@@ -16,10 +12,7 @@ const Boton: React.FC<ButtonProps> = ({
   children,
   icon,
   className,
-  backgroundColor,
-  hoverBackgroundColor,
-  fontSize = 'text-md',
-  color ='text-black'}:ButtonProps)=> {
+ }:ButtonProps)=> {
     
     const [loading, setLoading] = useState<boolean>(false);
     const [show, setShow] = useState<boolean>(true);
@@ -38,10 +31,10 @@ const Boton: React.FC<ButtonProps> = ({
 
 
   return (
-    <button className={`${backgroundColor} ${hoverBackgroundColor} ${color} font-medium mx-3 py-2 px-4 rounded min-w-fit w-32	h-12 space-x-4 items-center align-middle	 ${fontSize} ${className}`} onClick={loader} >
+    <button className={`font-medium mx-3 py-2 px-4 rounded min-w-fit	h-12 space-x-4 items-center ${className}`} onClick={loader} >
         {show && <span>{children}</span>}
         {show && <span>{icon}</span>}
-        {loading && "cargando.." }
+        {loading && <span>cargando..</span> }
 
 
     </button>

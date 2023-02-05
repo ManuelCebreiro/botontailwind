@@ -1,0 +1,9 @@
+label {
+@apply font-bold mt-10 mb-2
+}
+
+input {
+    @apply rounded border-2 border-gray-light align-middle h-12 p-4 !important;
+}
+
+    
